@@ -1,0 +1,273 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  background-color: rgb(246, 248, 250); /* GitHub light background */
+  color: #24292e; /* GitHub dark text */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+header {
+  
+  background-color: rgb(246, 248, 250);/* White header like GitHub */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e1e4e8; /* subtle border */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow:
+    0 1px 0 rgba(27, 31, 35, 0.04);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #e50914; /* Netflix red accent */
+  letter-spacing: 2px;
+  user-select: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav a {
+  color: #586069; /* GitHub nav text color */
+  text-decoration: none;
+  margin-left: 1.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.3rem 0;
+  transition: color 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #e50914; /* Netflix red on hover */
+  outline: none;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: #e50914;
+  transition: width 0.3s ease;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  border-radius: 2px;
+}
+
+nav a:hover::after, nav a:focus::after {
+  width: 100%;
+}
+
+nav a:active {
+  color: #b20710;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  border-left: 5px solid #e50914;
+  padding-left: 0.7rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #24292e;
+}
+
+.card-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 1.2rem;
+  flex: 1 1 30%;
+  box-shadow: 0 1px 3px rgba(27,31,35,0.12), 0 8px 24px rgba(149,157,165,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 4px 8px rgba(229,9,20,0.25),
+    0 12px 30px rgba(229,9,20,0.45);
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #e50914; /* Netflix red accent */
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: #586069; /* GitHub subtle text */
+}
+
+/* Card images placeholders with subtle gradient resembling Netflix palette */
+.card-img {
+  height: 110px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  box-shadow: inset 0 0 6px rgba(229,9,20,0.5);
+}
+.math {
+  background: linear-gradient(135deg, #ff704d 0%, #e94b3c 100%);
+}
+.cs {
+  background: linear-gradient(135deg, #ff3d6a 0%, #be2d40 100%);
+}
+.chem {
+  background: linear-gradient(135deg, #ff4343 0%, #920000 100%);
+}
+
+section.note {
+  margin-bottom: 2rem;
+}
+
+article.note {
+  background: #fff;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background-color 0.25s ease;
+}
+article.note:hover {
+  background-color: #fafbfc;
+}
+article.note h3 {
+  color: #e50914;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+article.note p {
+  color: #586069;
+  font-size: 0.95rem;
+}
+
+/* Messages section */
+#messages {
+  margin-top: 3rem;
+}
+.message {
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-left: 6px solid #e50914;
+  color: #586069;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+footer {
+  background-color: #fff;
+  color: #586069;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 1.2rem 1rem;
+  border-top: 1px solid #e1e4e8;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .card-row {
+    flex-direction: column;
+  }
+  .card {
+    flex: 1 1 100%;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  nav a {
+    margin-left: 0;
+  }
+}
+
+.my{
+  text-decoration: none;
+  color: #e50914;
+  font-weight: 700;
+  
+}
+.no{
+  text-decoration: none;
+  text-align: center;
+ 
+}
+
+#cyber{
+  text-align: left;
+  
+}
+
+
+.intro-message {
+  background-color: #1e1e1e;
+  padding: 40px 20px;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 2px solid #16a085;
+}
+
+.intro-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.intro-message h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #1abc9c;
+}
+
+.intro-message p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ecf0f1;
+}
+
+.intro-message ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.intro-message ul li {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #f1f1f1;
+}
